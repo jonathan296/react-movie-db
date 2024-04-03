@@ -1,8 +1,10 @@
 import searchIcon from '/magnifying-glass.svg'
 import { useState } from 'react'
+import { useEffect } from 'react';
+
 
 export default function SearchMovies(){
-
+const [movies, setMovies] = useState([])
 
     async function searchFunction (event){
         event.preventDefault()
@@ -10,12 +12,21 @@ export default function SearchMovies(){
         try{
             const response = await fetch(APIURL);
             const data = await response.json();
-            console.log(data)
+            setMovies(data.results)
+            
         }catch(err){
             console.error(err);
         }
     }
 
+    useEffect(() => {
+        if (movies.length > 0) {
+          
+          console.log(movies[1].title); // Safely attempt to log the title, if the second movie exists
+        }
+      }, [movies]);
+      
+    
     return(
         <div className='p-10'>
             <form className='grid form' onSubmit={searchFunction}>
@@ -24,7 +35,7 @@ export default function SearchMovies(){
                 <button className='text-xl border rounded-[20px] border-indigo-950 bg-slate-400 text-white py-4 px-8 hover:bg-slate-500' type='submit'>Search</button>
             </form>
             <div>
-                {}
+                
             </div>
         </div>
         
