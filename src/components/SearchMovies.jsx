@@ -21,7 +21,7 @@ const [movies, setMovies] = useState([])
 
     useEffect(() => {
         if (movies.length > 0) {
-          
+          console.log(movies)
           console.log(movies[1].title); // Safely attempt to log the title, if the second movie exists
         }
       }, [movies]);
