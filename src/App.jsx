@@ -1,21 +1,34 @@
-import { useState } from 'react'
-import searchIcon from '/magnifying-glass.svg'
-import './App.css'
-import SearchMovies from './components/SearchMovies '
+import { useState } from "react";
+import searchIcon from "/magnifying-glass.svg";
+import "./App.css";
+import SearchMovies from "./components/SearchMovies ";
 
 function App() {
-  const [style, setStyle] = useState('searchBar')
-  
+  const [style, setStyle] = useState("searchBar");
+
   return (
-    <div>
+    <div className="flex md:flex-row justify-start h-screen flex-col">
+
+
+      <div className="bg-[#161D2F] w-[6rem] h-vh m-[2rem] mr-[2.25rem] md:block hidden rounded-[20px]">
+        <p>hello</p>
+      </div>
+      <div className="bg-green-500 w-vh h-40 m-10 block md:hidden">
+        <p>hello</p>
+      </div>
+      <div className="grow">
+        <div className="bg-red-500">
+        <SearchMovies/>
+        </div>
+        <div className="bg-green-500">
+          <p>Hello World!</p>
+        </div>
+      </div>
       
-      <h1 className='text-center text-7xl pt-10 font-medium'> React Movie Search</h1>
-      <SearchMovies/>
-      
-      
-      
+
+
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

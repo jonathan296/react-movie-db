@@ -28,7 +28,7 @@ const [movies, setMovies] = useState([])
       
     
     return(
-        <div className='p-10'>
+        <div className='p-8 w-1/2'>
             <form className='grid form' onSubmit={searchFunction}>
                 <label className='text-xl mb-1 uppercase' htmlFor='query'>Movie Name</label>
                 <input className='input text-2xl rounded-[20px] py-2 px-8 mb-4 leading-[2.8rem]' type='text' name='query' placeholder='i.e Jurrasic Park'></input>
