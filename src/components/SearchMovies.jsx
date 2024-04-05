@@ -22,20 +22,32 @@ const [movies, setMovies] = useState([])
     useEffect(() => {
         if (movies.length > 0) {
           console.log(movies)
-          console.log(movies[1].title); // Safely attempt to log the title, if the second movie exists
+          console.log(movies[1].backdrop_path); // Safely attempt to log the title, if the second movie exists
+          console.log(`https://image.tmdb.org/t/p/w500${movies[1].backdrop_path}`);
+          
+          
         }
       }, [movies]);
       
     
     return(
-        <div className='p-8 w-1/2'>
+        <div className=''>
             <form className='grid form' onSubmit={searchFunction}>
                 <label className='text-xl mb-1 uppercase' htmlFor='query'>Movie Name</label>
                 <input className='input text-2xl rounded-[20px] py-2 px-8 mb-4 leading-[2.8rem]' type='text' name='query' placeholder='i.e Jurrasic Park'></input>
                 <button className='text-xl border rounded-[20px] border-indigo-950 bg-slate-400 text-white py-4 px-8 hover:bg-slate-500' type='submit'>Search</button>
             </form>
-            <div>
-                
+            <div className='flex flex-nowrap overflow-x-auto'>
+            
+            {movies.map(movie => (
+                    <div className="shrink-0">
+                        <img className=""
+                            src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
+                            alt={movie.title + ' poster'}
+                            />
+
+                    </div>
+                ))}
             </div>
         </div>
         
