@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className="flex lg:flex-row justify-start  lg:h-screen flex-col">
-      <Navbar/>
+        <Navbar/>
 
       
       <div className=" w-full">
