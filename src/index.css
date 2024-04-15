@@ -1,11 +1,17 @@
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+  }
+
+
+
 html {
     font-size: 16px;
     
 }
 
-* {
-    box-sizing: border-box;
-}
+
 
 body {
     margin: 0;
@@ -14,3 +20,23 @@ body {
     
 }
 
+.swiper {
+    width: 100%;
+    
+}
+
+.swiper-slide {
+    text-align: center;
+    width: 470px;
+    height: 230px;
+    
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    image-rendering: auto;
+}

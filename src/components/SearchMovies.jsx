@@ -1,5 +1,5 @@
-import searchIcon from '/magnifying-glass.svg'
-import { useState } from 'react'
+import searchIcon from '/magnifying-glass.svg';
+import { useState } from 'react';
 import { useEffect } from 'react';
 
 
@@ -36,7 +36,7 @@ const [query, setQuery]= useState([])
                 <input className='input text-2xl rounded-[20px] py-2 px-8 mb-4 leading-[2.8rem]' type='text' name='query' value={query} onChange={(e) => setQuery(e.target.value)} placeholder='i.e Jurrasic Park'></input>
                 <button className='text-xl border rounded-[20px] border-indigo-950 bg-slate-400 text-white py-4 px-8 hover:bg-slate-500' type='submit'>Search</button>
             </form>
-            <h1 className='text-3xl text-white mb-[25px]'>Trending</h1>
+            
             <div className='flex flex-wrap gap-[40px]'>
             
             {movies.filter(movie => movie.backdrop_path).map(movie => (
